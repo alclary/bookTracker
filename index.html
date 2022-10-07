@@ -4,42 +4,43 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="events.js"></script> 
         <title>bookTracker</title>
     </head>
     <body>
         <!-- Container for lists of all library objects (i.e. books)-->
         <div id="libraryContainer">
-            <ul id="finished"></ul>
             <ul id="inProgress"></ul>
+            <ul id="finished"></ul>
             <ul id="planned"></ul>
         </div>
 
         <!-- Container for input fields to add a new book to library-->
-        <div id="bookEntry">
+        <div id="newBookForm">
             State:
             <select id="bookState">
-                <option value="finished">Finished</option>
                 <option value="inProgress">In Progress</option>
-                <option value="planned">Planned</option></select
-            ><br />
+                <option value="finished">Finished</option>
+                <option value="planned">Planned</option>
+            </select><br />
             Title: <input type="text" id="bookTitle" /><br />
             Author: <input type="text" id="bookAuthor" /><br />
             Genre: <input type="text" id="bookGenre" /><br />
 
-            <!-- IF read OR inProgress -->
+            <!-- IF finished OR inProgress -->
             Pages: <input type="number" id="bookPages" maxlength="5" /><br />
             Date Started: <input type="date" id="bookStarted" /><br />
 
-            <!-- IF read -->
+            <!-- IF finished -->
             Date Finished: <input type="date" id="bookFinished" /><br />
             
             <!-- IF inProgress -->
-            <div class="progressPoints">
+            <div id="progressForm">
                 <hr />
                 Pages:
                 <input type="number" class="progressPages" maxlength="5" /> to
                 date <input type="date" class="progressDate" /><br />
             </div>
-        </div><!-- bookEntry -->
+        </div><!-- newBookForm -->
     </body>
 </html>
