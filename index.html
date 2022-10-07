@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="events.js"></script> 
         <title>bookTracker</title>
     </head>
     <body>
@@ -18,7 +17,7 @@
         <!-- Container for input fields to add a new book to library-->
         <div id="newBookForm">
             State:
-            <select id="bookState">
+            <select id="bookState" autocomplete="off">
                 <option value="inProgress">In Progress</option>
                 <option value="finished">Finished</option>
                 <option value="planned">Planned</option>
@@ -27,20 +26,25 @@
             Author: <input type="text" id="bookAuthor" /><br />
             Genre: <input type="text" id="bookGenre" /><br />
 
-            <!-- IF finished OR inProgress -->
-            Pages: <input type="number" id="bookPages" maxlength="5" /><br />
-            Date Started: <input type="date" id="bookStarted" /><br />
+            <!-- IF started (i.e. finished OR inProgress) -->
+            <div id="startedForm">
+                Pages: <input type="number" id="bookPages" maxlength="5" /><br />
+                Date Started: <input type="date" id="bookStarted" /><br />
+            </div>
 
             <!-- IF finished -->
-            Date Finished: <input type="date" id="bookFinished" /><br />
-            
+            <div id="finishedForm" style="display: none;">
+                Date Finished: <input type="date" id="bookFinished" /><br />
+            </div>
+
             <!-- IF inProgress -->
             <div id="progressForm">
                 <hr />
-                Pages:
-                <input type="number" class="progressPages" maxlength="5" /> to
+                Read
+                <input type="number" class="progressPages" maxlength="5" /> pages to
                 date <input type="date" class="progressDate" /><br />
             </div>
         </div><!-- newBookForm -->
     </body>
+    <script src="events.js"></script> 
 </html>

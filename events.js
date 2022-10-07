@@ -9,34 +9,43 @@ const newBookState = document.querySelector('#bookState');
 const newBookTitle = document.querySelector('#bookTitle');
 const newBookAuthor = document.querySelector('#bookAuthor');
 const newBookGenre = document.querySelector('#bookGenre');
+
+// startedForm Variables
+const startedForm = document.querySelector('#startedForm');
 const newBookPages = document.querySelector('#bookPages');
 const newBookStart = document.querySelector('#bookStarted');
+
+// finishedForm Variables
+const finishedForm = document.querySelector('#finishedForm');
 const newBookFinish = document.querySelector('#bookFinished');
 
-// progressPoints Input Variables
+// progressForm Variables
 const progressForm = document.querySelector('#progressForm');
 const progressDate = document.querySelector('#progressDate');
 const progressPages = document.querySelector('#progressPages');
 
+// display base, started, and in-progress parts of form
 function displayInProgressForm () {
     newBookPages.style.display = '';
-    newBookStart.style.display = '';
+    startedForm.style.display = '';
     progressForm.style.display = '';
-    newBookFinish.style.display = 'none';
+    finishedForm.style.display = 'none';
 }
 
+// display base, started, and finished parts of form
 function displayFinishedForm () {
     newBookPages.style.display = '';
-    newBookStart.style.display = '';
-    newBookFinish.style.display = '';
+    startedForm.style.display = '';
     progressForm.style.display = 'none';
+    finishedForm.style.display = '';
 }
 
+// display only base form
 function displayPlannedForm () {
     newBookPages.style.display = '';
-    newBookStart.style.display = 'none';
-    newBookFinish.style.display = 'none';
+    startedForm.style.display = 'none';
     progressForm.style.display = 'none';
+    finishedForm.style.display = 'none';
 }
 
 // Conditional form display when newBookState changes
