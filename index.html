@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World!</title>
+    <title>bookTracker</title>
 </head>
 <body>
-    <!-- Form field for entry of new books -->
+    <!-- Container for lists of all library objects (i.e. books)-->
+    <div id="libraryContainer">
+        <ul id="read"></ul>
+        <ul id="inProgress"></ul>
+        <ul id="toRead"></ul>
+    </div>
 
-    <!-- Make a container for list of books (listed by state: 
-        read, in progress, to read)-->
+    <!-- Container for input fields to add a new book to library-->
+    <div id="newBook">
+        <!-- TODO: radio selector input for read, inProgress, toRead -->
+        <input type="text" id="bookTitle" value="Title">
+        <input type="text" id="bookAuthor" value="Title">
+        <!-- IF read OR inProgress -->
+            <!-- TODO: pages input -->
+            <!-- TODO: date started input -->
+        <!-- IF inProgress -->
+            <!-- TODO:  input pages read + input current date -->
+        <!-- IF read -->
+            <!-- TODO: date finished input -->
+    </div>
+
 </body>
 </html>
