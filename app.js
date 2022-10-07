@@ -5,7 +5,7 @@
 
 class Library {
     constructor() {}
-}
+};
 
 // Define Book Class
 
@@ -17,11 +17,11 @@ class Book {
         this.genre = genre;
         this.state = state; ///!!! I JUST WROTE STUFF FEEL FREE TO EDIT AS NEEDED LOL
     }
-}
-// Event listeners for webpage stuff
-//      i.e. defines logic that allows us to create/read/update/delete
-//      books from webpage
+};
 
 // A way to display projected finish time of a book
 
 // Draw a calendar
+
+// Exports
+module.export = { Library, Book };
