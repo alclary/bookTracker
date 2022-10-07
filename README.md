@@ -1,5 +1,7 @@
 # bookTracker
-Beaverhacks F22 Project - a book tracking webapp. Allows a user to log books they've read, are currently reading, and plan to read. Provides projected time-to-finish and other relevant metrics based on reading history. 
+**Beaverhacks F22 Team Project** - a book tracking webapp. Allows a user to log books they've read, are currently reading, and plan to read. Provides projected time-to-finish and other relevant metrics based on reading history. 
+
+**Team members:** [gundrank](https://github.com/gundrank), [jacetaylor](https://github.com/jacetaylor), [umpara](https://github.com/umpara), [alclary](https://github.com/alclary)
 
 ## Features:
 - Allows user to log books
