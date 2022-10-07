@@ -1,5 +1,5 @@
 // Define Library Class
-//      tracks and calculates 
+//      collection of books and calculates user-scope metrics
 
 // Define Book Class
 
