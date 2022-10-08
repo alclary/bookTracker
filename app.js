@@ -1,27 +1,14 @@
 "use strict";
 
-// Define Library Class
-//      collection of books and calculates user-scope metrics
+// IMPORTS
+import { eventListeners } from "./events";
 
-class Library {
-    constructor() {}
-};
+// Start event listeners for webapp
+eventListeners();
 
-// Define Book Class
+// Check localStorage for persistent data
 
-class Book {
-    constructor(author, title, pages, genre, state) {
-        this.author = author;
-        this.title = title;
-        this.pages = pages;
-        this.genre = genre;
-        this.state = state; ///!!! I JUST WROTE STUFF FEEL FREE TO EDIT AS NEEDED LOL
-    }
-};
 
 // A way to display projected finish time of a book
 
 // Draw a calendar
-
-// Exports
-module.export = { Library, Book };

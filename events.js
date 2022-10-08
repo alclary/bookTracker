@@ -60,5 +60,5 @@ export function eventListeners () {
             displayPlannedForm();
         }
     });
-    // Create 
+    // Create a new book on 'submit'
 };
