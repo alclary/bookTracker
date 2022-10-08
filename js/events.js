@@ -27,12 +27,18 @@ const progressPages = document.querySelector("#progressPages");
 const newBookSubmit = document.querySelector("#bookSubmit");
 
 // HELPER FUNCTIONS FOR EVENT LISTENERS
+// set current date on progressDate field
+export function progressDateToday() {
+    progressDate.valueAsDate = new Date();
+}
+
 // display base, started, and in-progress parts of form
 function displayInProgressForm() {
   newBookPages.style.display = "";
   startedForm.style.display = "";
   progressForm.style.display = "";
   finishedForm.style.display = "none";
+  progressDateToday();
 }
 
 // display base, started, and finished parts of form

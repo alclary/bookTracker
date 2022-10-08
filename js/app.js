@@ -1,5 +1,5 @@
 import { Library } from "./classes.js";
-import eventListeners from "./events.js";
+import eventListeners, { progressDateToday } from "./events.js";
 
 // Strict mode
 "use strict";
@@ -18,6 +18,7 @@ else {
 // Start event listeners for webapp
 eventListeners(lib);
 
-// A way to display projected finish time of a book
+// Set progress date input to current date
+progressDateToday();
 
 // Draw a calendar
