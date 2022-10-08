@@ -22,7 +22,7 @@
         <div class="row">
           <div class="two columns">
             <label for="bookState">State</label>
-            <select class="u-full-width" id="bookState" autocomplete="off">
+            <select class="u-full-width" id="bookState" autocomplete="off" required>
               <option value="inProgress">In Progress</option>
               <option value="finished">Finished</option>
               <option value="planned">Planned</option>
@@ -31,17 +31,13 @@
           <!-- #newBookForm -->
           <div class="ten columns">
             <label for="bookTitle">Title</label>
-            <input class="u-full-width" type="text" id="bookTitle" />
+            <input class="u-full-width" type="text" id="bookTitle" required />
           </div>
         </div>
         <div class="row">
           <div class="four columns">
             <label for="bookTitle">Author</label>
-            <input class="u-full-width" type="text" id="bookAuthor" />
-          </div>
-          <div class="four columns">
-            <label for="bookGenre">Genre</label>
-            <input class="u-full-width" type="text" id="bookGenre" />
+            <input class="u-full-width" type="text" id="bookAuthor" required />
           </div>
           <div class="four columns">
             <label for="bookTitle">Total Pages</label>
@@ -49,21 +45,26 @@
               class="u-full-width"
               type="number"
               id="bookPages"
-              minvalue="0"
-              maxlength="5"
+              min="0"
+              max="99999"
+              required
             />
+          </div>
+          <div class="four columns">
+            <label for="bookGenre">Genre</label>
+            <input class="u-full-width" type="text" id="bookGenre" />
           </div>
         </div>
         <div class="row">
           <!-- Display only if book started (i.e. finished OR inProgress) -->
           <div id="startedForm" class="six columns">
             <label for="bookStarted">Date Started</label>
-            <input class="u-full-width" type="date" id="bookStarted" />
+            <input class="u-full-width" type="date" id="bookStarted" required/>
           </div>
           <!-- Display only if book finished -->
           <div id="finishedForm" class="six columns" style="display: none">
             <label for="bookFinished">Date Finished</label>
-            <input class="u-full-width" type="date" id="bookFinished" />
+            <input class="u-full-width" type="date" id="bookFinished" required/>
           </div>
         </div>
 
@@ -71,9 +72,9 @@
         <div id="progressForm" class="row">
           <hr />
           <div class="twelve columns">
-            Read
-            <input type="number" class="progressPages" maxlength="5" /> pages to
-            date <input type="date" class="progressDate" />
+            I've read
+            <input type="number" id="progressPages" min="0" maxlength="5" required/> pages to
+            date <input type="date" id="progressDate" required/>
           </div>
         </div>
 
