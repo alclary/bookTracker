@@ -1,9 +1,6 @@
 "use strict";
 
-// Event listeners for webpage stuff
-//      i.e. defines logic that allows us to create/read/update/delete
-//      books from webpage
-
+// VARIABLE DECLARATIONS FOR EVENT LISTENERS
 // newBookForm Input Variables
 const newBookState = document.querySelector('#bookState');
 const newBookTitle = document.querySelector('#bookTitle');
@@ -24,6 +21,7 @@ const progressForm = document.querySelector('#progressForm');
 const progressDate = document.querySelector('#progressDate');
 const progressPages = document.querySelector('#progressPages');
 
+// HELPER FUNCTIONS FOR EVENT LISTENERS
 // display base, started, and in-progress parts of form
 function displayInProgressForm () {
     newBookPages.style.display = '';
@@ -48,15 +46,19 @@ function displayPlannedForm () {
     finishedForm.style.display = 'none';
 }
 
-// Conditional form display when newBookState changes
-newBookState.addEventListener('change', () => {
-    if (newBookState.value === "inProgress") {
-        displayInProgressForm();
-    }
-    else if (newBookState.value === "finished") {
-        displayFinishedForm();
-    }
-    else if (newBookState.value === "planned") {
-        displayPlannedForm();
-    }
-});
+// ENCOMPASSING FUNCTION FOR EVENT LISTENERS
+export function eventListeners () {
+    // Conditional form display when newBookState changes
+    newBookState.addEventListener('change', () => {
+        if (newBookState.value === "inProgress") {
+            displayInProgressForm();
+        }
+        else if (newBookState.value === "finished") {
+            displayFinishedForm();
+        }
+        else if (newBookState.value === "planned") {
+            displayPlannedForm();
+        }
+    });
+    // Create 
+};
