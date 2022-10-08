@@ -1,20 +1,22 @@
-import { Library, Book } from "./classes.js";
+import { Library } from "./classes.js";
 import eventListeners from "./events.js";
 
 // Strict mode
 "use strict";
 
-// Start event listeners for webapp
-eventListeners();
-
 // If localstorage has libray, load. Else, create.
 if (localStorage.storedLibrary) {
-    let lib = JSON.parse(localStorage.storedLibrary);
+    var lib = JSON.parse(localStorage.storedLibrary);
+    console.log("Library found:", lib)
 }
 else {
-    let lib = new Library()
+    var lib = new Library()
     localStorage.storedLibrary = JSON.stringify(lib);
+    console.log("Library not found. Created a new one:", lib)
 };
+
+// Start event listeners for webapp
+eventListeners(lib);
 
 // A way to display projected finish time of a book
 
