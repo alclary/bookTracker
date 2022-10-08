@@ -1,77 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="./css/skeleton.css" />
-        <title>bookTracker</title>
-    </head>
-    <body>
-        <!-- Container for lists of all library objects (i.e. books)-->
-        <div class="container">
-            <div id="libraryContainer">
-                <div id="inProgress" class="row"></div>
-                <div id="finished" class="row"></div>
-                <div id="planned" class="row"></div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./css/skeleton.css" />
+    <title>bookTracker</title>
+  </head>
+  <body>
+    <!-- Container for lists of all library objects (i.e. books)-->
+    <div class="container">
+      <div id="libraryContainer">
+        <div id="inProgress" class="row"></div>
+        <div id="finished" class="row"></div>
+        <div id="planned" class="row"></div>
+      </div>
 
-        <!-- Container for input fields to add a new book to library-->
-        <form id="newBookForm">
-            <div class="row">
-                <div class="two columns">
-                    <label for="bookState">State</label>
-                    <select class="u-full-width" id="bookState" autocomplete="off">
-                        <option value="inProgress">In Progress</option>
-                        <option value="finished">Finished</option>
-                        <option value="planned">Planned</option>
-                    </select>
-                </div><!-- #newBookForm -->
-                <div class="ten columns">
-                    <label for="bookTitle">Title</label>
-                    <input class="u-full-width" type="text" id="bookTitle" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="four columns">
-                    <label for="bookTitle">Author</label>
-                    <input class="u-full-width" type="text" id="bookAuthor" />
-                </div>
-                <div class="four columns">
-                    <label for="bookGenre">Genre</label>
-                    <input class="u-full-width" type="text" id="bookGenre" />
-                </div>
-                <div class="four columns">
-                    <label for="bookTitle">Total Pages</label>
-                    <input class="u-full-width" type="number" id="bookPages" minvalue="0" maxlength="5" />
-                </div>
-            </div>
-            <div class="row">
-                <!-- Display only if book started (i.e. finished OR inProgress) -->
-                <div id="startedForm" class="six columns">
-                    <label for="bookStarted">Date Started</label>
-                    <input class="u-full-width" type="date" id="bookStarted" />
-                </div>
-                <!-- Display only if book finished -->
-                <div id="finishedForm" class="six columns" style="display: none;">
-                    <label for="bookFinished">Date Finished</label>
-                    <input class="u-full-width" type="date" id="bookFinished" />
-                </div>
-            </div>
-            
-            <!-- Display only if book inProgress -->
-            <div id="progressForm" class="row">
-                <hr />
-                <div class="twelve columns">
-                    Read <input type="number" class="progressPages" maxlength="5" /> pages to date <input type="date" class="progressDate" />
-                </div>
-            </div>
+      <!-- Container for input fields to add a new book to library-->
+      <form id="newBookForm">
+        <div class="row">
+          <div class="two columns">
+            <label for="bookState">State</label>
+            <select class="u-full-width" id="bookState" autocomplete="off">
+              <option value="inProgress">In Progress</option>
+              <option value="finished">Finished</option>
+              <option value="planned">Planned</option>
+            </select>
+          </div>
+          <!-- #newBookForm -->
+          <div class="ten columns">
+            <label for="bookTitle">Title</label>
+            <input class="u-full-width" type="text" id="bookTitle" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="four columns">
+            <label for="bookTitle">Author</label>
+            <input class="u-full-width" type="text" id="bookAuthor" />
+          </div>
+          <div class="four columns">
+            <label for="bookGenre">Genre</label>
+            <input class="u-full-width" type="text" id="bookGenre" />
+          </div>
+          <div class="four columns">
+            <label for="bookTitle">Total Pages</label>
+            <input
+              class="u-full-width"
+              type="number"
+              id="bookPages"
+              minvalue="0"
+              maxlength="5"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <!-- Display only if book started (i.e. finished OR inProgress) -->
+          <div id="startedForm" class="six columns">
+            <label for="bookStarted">Date Started</label>
+            <input class="u-full-width" type="date" id="bookStarted" />
+          </div>
+          <!-- Display only if book finished -->
+          <div id="finishedForm" class="six columns" style="display: none">
+            <label for="bookFinished">Date Finished</label>
+            <input class="u-full-width" type="date" id="bookFinished" />
+          </div>
+        </div>
 
-            <!-- Submit Button -->
-            <br /><input type="button" id="bookSubmit" value="Submit" />
-        </form><!-- #newBookForm -->
-    </div><!-- .container -->
-    </body>
-    <script type="module" src="./js/app.js"></script>
+        <!-- Display only if book inProgress -->
+        <div id="progressForm" class="row">
+          <hr />
+          <div class="twelve columns">
+            Read
+            <input type="number" class="progressPages" maxlength="5" /> pages to
+            date <input type="date" class="progressDate" />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <br /><input type="button" id="bookSubmit" value="Submit" />
+      </form>
+      <!-- #newBookForm -->
+    </div>
+    <!-- .container -->
+  </body>
+  <script type="module" src="./js/app.js"></script>
 </html>
