@@ -23,6 +23,9 @@ const progressForm = document.querySelector("#progressForm");
 const progressDate = document.querySelector("#progressDate");
 const progressPages = document.querySelector("#progressPages");
 
+// submit Btn
+const newBookSubmit = document.querySelector("#bookSubmit");
+
 // HELPER FUNCTIONS FOR EVENT LISTENERS
 // display base, started, and in-progress parts of form
 function displayInProgressForm() {
