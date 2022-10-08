@@ -1,3 +1,5 @@
+import { Library, Book } from "./classes.js";
+
 "use strict";
 
 // VARIABLE DECLARATIONS FOR EVENT LISTENERS
@@ -47,7 +49,7 @@ function displayPlannedForm () {
 }
 
 // ENCOMPASSING FUNCTION FOR EVENT LISTENERS
-export function eventListeners () {
+export default function eventListeners () {
     // Conditional form display when newBookState changes
     newBookState.addEventListener('change', () => {
         if (newBookState.value === "inProgress") {
