@@ -3,6 +3,8 @@ import { Library, Book } from "./classes.js";
 ("use strict");
 
 // VARIABLE DECLARATIONS FOR EVENT LISTENERS
+// Add Book / Open editorPane Buttons
+const btnsAddBook = document.querySelectorAll(".btnAddBook")
 // Base Form Variables
 const inputBookState = document.querySelector("#bookState");
 const inputBookTitle = document.querySelector("#bookTitle");
@@ -29,10 +31,15 @@ const editorClose = document.querySelector('#editorClose')
 function progressDateToday() {
     inputProgressDate.valueAsDate = new Date();
 }
-// Display floating editorPane
-function displayEditorPane() {
-  blurOverlay.style.display = "";
-  editorPane.style.display = "";
+// Display floating editorPane & open to correct state
+function displayEditorPane(event) {
+  blurOverlay.style.display = "block";
+  editorPane.style.display = "block";
+  if (event.target.value) {  // form state input updated to event button's "value" property
+    inputBookState.value = event.target.value;
+    // force a change event to prompt the change listener for inputBookState
+    inputBookState.dispatchEvent(new Event('change'));
+  }
 }
 // Hide floating editorPane
 function hideEditorPane() {
@@ -64,8 +71,12 @@ function displayPlannedForm() {
 
 // WRAPPER FUNCTION FOR EVENT LISTENERS
 export default function formListeners(library) {
+  // Open Editor Pane
+  btnsAddBook.forEach(btn => {
+    btn.addEventListener("click", (event) => displayEditorPane(event));
+  });
   // Close Editor Pane
-  editorClose.addEventListener("click", () => hideEditorPane())
+  editorClose.addEventListener("click", () => hideEditorPane());
   // Dynamic form display on state change
   inputBookState.addEventListener("change", () => {
     if (inputBookState.value === "inProgress") {
