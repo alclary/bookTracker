@@ -59,7 +59,6 @@ input:invalid {
   background-color: rgb(255, 255, 255);
   margin-left: 5%;
   width: 90%;
-  max-height: 80vh;
   position: absolute;
   top: 8rem;
   border: 1px solid black;
