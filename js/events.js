@@ -3,69 +3,76 @@ import { Library, Book } from "./classes.js";
 ("use strict");
 
 // VARIABLE DECLARATIONS FOR EVENT LISTENERS
-// newBookForm Input Variables
-const newBookState = document.querySelector("#bookState");
-const newBookTitle = document.querySelector("#bookTitle");
-const newBookAuthor = document.querySelector("#bookAuthor");
-const newBookGenre = document.querySelector("#bookGenre");
-
-// startedForm Variables
-const startedForm = document.querySelector("#startedForm");
-const newBookPages = document.querySelector("#bookPages");
-const newBookStart = document.querySelector("#bookStarted");
-
-// finishedForm Variables
-const finishedForm = document.querySelector("#finishedForm");
-const newBookFinish = document.querySelector("#bookFinished");
-
-// progressForm Variables
-const progressForm = document.querySelector("#progressForm");
-const progressDate = document.querySelector("#progressDate");
-const progressPages = document.querySelector("#progressPages");
-
-// submit Btn
-const newBookSubmit = document.querySelector("#bookSubmit");
+// Base Form Variables
+const inputBookState = document.querySelector("#bookState");
+const inputBookTitle = document.querySelector("#bookTitle");
+const inputBookAuthor = document.querySelector("#bookAuthor");
+const inputBookPages = document.querySelector("#bookPages");
+const inputBookGenre = document.querySelector("#bookGenre");
+// Dynamic Form Sections
+const sectionStarted = document.querySelector("#sectionStarted");
+const inputBookStart = document.querySelector("#bookStarted");
+const sectionFinished = document.querySelector("#sectionFinished");
+const inputBookFinish = document.querySelector("#bookFinished");
+const sectionInProgress = document.querySelector("#sectionInProgress");
+const inputProgressDate = document.querySelector("#progressDate");
+const inputProgressPages = document.querySelector("#progressPages");
+// Submit Button
+const formSubmit = document.querySelector("#bookSubmit");
+// Editor Pane
+const editorPane = document.querySelector("#editorPane")
+const blurOverlay = document.querySelector("#blur")
+const editorClose = document.querySelector('#editorClose')
 
 // HELPER FUNCTIONS FOR EVENT LISTENERS
-// set current date on progressDate field
-export function progressDateToday() {
-    progressDate.valueAsDate = new Date();
+// set current date on inputProgressDate field
+function progressDateToday() {
+    inputProgressDate.valueAsDate = new Date();
 }
-
-// display base, started, and in-progress parts of form
+// Display floating editorPane
+function displayEditorPane() {
+  blurOverlay.style.display = "";
+  editorPane.style.display = "";
+}
+// Hide floating editorPane
+function hideEditorPane() {
+  blurOverlay.style.display = "none";
+  editorPane.style.display = "none";
+}
+// Dynamic form display; state = inProgress
 function displayInProgressForm() {
-  newBookPages.style.display = "";
-  startedForm.style.display = "";
-  progressForm.style.display = "";
-  finishedForm.style.display = "none";
+  inputBookPages.style.display = "";
+  sectionStarted.style.display = "";
+  sectionInProgress.style.display = "";
+  sectionFinished.style.display = "none";
   progressDateToday();
 }
-
-// display base, started, and finished parts of form
+// Dynamic form display; state = finished
 function displayFinishedForm() {
-  newBookPages.style.display = "";
-  startedForm.style.display = "";
-  progressForm.style.display = "none";
-  finishedForm.style.display = "";
+  inputBookPages.style.display = "";
+  sectionStarted.style.display = "";
+  sectionInProgress.style.display = "none";
+  sectionFinished.style.display = "";
 }
-
-// display only base form
+// Dynamic form display; state = planned
 function displayPlannedForm() {
-  newBookPages.style.display = "";
-  startedForm.style.display = "none";
-  progressForm.style.display = "none";
-  finishedForm.style.display = "none";
+  inputBookPages.style.display = "";
+  sectionStarted.style.display = "none";
+  sectionInProgress.style.display = "none";
+  sectionFinished.style.display = "none";
 }
 
-// ENCOMPASSING FUNCTION FOR EVENT LISTENERS
-export default function eventListeners() {
-  // Conditional form display when newBookState changes
-  newBookState.addEventListener("change", () => {
-    if (newBookState.value === "inProgress") {
+// WRAPPER FUNCTION FOR EVENT LISTENERS
+export default function formListeners(library) {
+  // Close Editor Pane
+  editorClose.addEventListener("click", () => hideEditorPane())
+  // Dynamic form display on state change
+  inputBookState.addEventListener("change", () => {
+    if (inputBookState.value === "inProgress") {
       displayInProgressForm();
-    } else if (newBookState.value === "finished") {
+    } else if (inputBookState.value === "finished") {
       displayFinishedForm();
-    } else if (newBookState.value === "planned") {
+    } else if (inputBookState.value === "planned") {
       displayPlannedForm();
     }
   });

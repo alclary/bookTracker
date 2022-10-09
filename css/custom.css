@@ -19,3 +19,43 @@ h6 { font-size: 1.05rem !important; line-height: 1.6;  letter-spacing: 0; }
 input:invalid {
     border: 1px solid rgb(255, 174, 174);
 }
+
+#blur {
+  /* display: none; */
+  background: rgba(255, 255, 255, .25);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+#editorPane {
+  /* display: none; */
+  background-color: rgb(255, 255, 255);
+  margin-left: 5%;
+  width: 90%;
+  max-height: 80vh;
+  position: absolute;
+  top: 8rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px rgba(54, 47, 47, 0.4);
+  z-index: 2;
+}
+
+#editorNav {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#editorClose {
+  float: right;
+}
+
+#bookSubmit {
+  margin-top: 1rem;
+  float: right;
+}
+

@@ -16,9 +16,6 @@ else {
 };
 
 // Start event listeners for webapp
-eventListeners(lib);
-
-// Set progress date input to current date
-progressDateToday();
+formListeners(lib);
 
 // Draw a calendar

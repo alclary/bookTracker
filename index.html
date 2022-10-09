@@ -10,34 +10,48 @@
     <title>bookTracker</title>
   </head>
   <body>
+    <!-- Overlay for blur on editorPane focus -->
+    <div id="blur"></div>
     <!-- Container for lists of all library objects (i.e. books)-->
-    <div class="container">
+    <div id="appWrapper" class="container">
+      <div id="libraryCollection">
       <h1>bookTracker</h1>
       <div id="libraryContainer">
-        <div id="inProgress" class="row">
-          <h2>In Progress</h2>
-        </div>
-        <div id="finished" class="row">
-          <h2>Finished</h2>
-        </div>
-        <div id="planned" class="row">
-          <h2>Planned Reading</h2>
-        </div>
+      <div id="inProgress" class="row">
+        <h2>In Progress</h2>
       </div>
+      <div id="finished" class="row">
+        <h2>Finished</h2>
+      </div>
+      <div id="planned" class="row">
+        <h2>Planned Reading</h2>
+      </div>
+    </div>
+    
 
+    <!-- Default: hidden; floating div containing book editor form -->
+    <div id="editorPane">
+      <div id="editorNav">
+        <button id="editorClose">x</button>
+      </div>
       <!-- Container for input fields to add a new book to library-->
-      <form id="newBookForm">
+      <form id="bookForm" class="container">
         <div class="row">
-          <div class="two columns">
+          <div class="three columns">
             <label for="bookState">State</label>
-            <select class="u-full-width" id="bookState" autocomplete="off" required>
+            <select
+              class="u-full-width"
+              id="bookState"
+              autocomplete="off"
+              required
+            >
               <option value="inProgress">In Progress</option>
               <option value="finished">Finished</option>
               <option value="planned">Planned</option>
             </select>
           </div>
           <!-- #newBookForm -->
-          <div class="ten columns">
+          <div class="nine columns">
             <label for="bookTitle">Title</label>
             <input class="u-full-width" type="text" id="bookTitle" required />
           </div>
@@ -65,31 +79,42 @@
         </div>
         <div class="row">
           <!-- Display only if book started (i.e. finished OR inProgress) -->
-          <div id="startedForm" class="six columns">
+          <div id="sectionStarted" class="six columns">
             <label for="bookStarted">Date Started</label>
-            <input class="u-full-width" type="date" id="bookStarted" required/>
+            <input class="u-full-width" type="date" id="bookStarted" required />
           </div>
           <!-- Display only if book finished -->
-          <div id="finishedForm" class="six columns" style="display: none">
+          <div id="sectionFinished" class="six columns" style="display: none">
             <label for="bookFinished">Date Finished</label>
-            <input class="u-full-width" type="date" id="bookFinished" required/>
+            <input
+              class="u-full-width"
+              type="date"
+              id="bookFinished"
+              required
+            />
           </div>
         </div>
 
         <!-- Display only if book inProgress -->
-        <div id="progressForm" class="row">
+        <div id="sectionInProgress" class="row">
           <hr />
           <div class="twelve columns">
             I've read
-            <input type="number" id="progressPages" min="0" maxlength="5" required/> pages to
-            date <input type="date" id="progressDate" required/>
+            <input
+              type="number"
+              id="progressPages"
+              min="0"
+              maxlength="5"
+              required
+            />
+            pages to date <input type="date" id="progressDate" required />
           </div>
         </div>
 
         <button id="bookSubmit">Submit</button>
-      </form><!-- #newBookForm -->
+      </form>
     </div>
-    <!-- .container -->
+  </div>
   </body>
   <script type="module" src="./js/app.js"></script>
 </html>
