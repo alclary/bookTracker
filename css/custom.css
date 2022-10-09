@@ -1,3 +1,7 @@
+body {
+  margin: 1rem 0 1rem 0;
+}
+
 /* Typography overrides */
 h1 { font-size: 3.8rem !important; line-height: 1.2;  letter-spacing: -.1rem;}
 h2 { font-size: 2.3rem !important; line-height: 1.25; letter-spacing: -.1rem; }
@@ -20,6 +24,11 @@ input:invalid {
     border: 1px solid rgb(255, 174, 174);
 }
 
+.sectionHeading {
+  display: flex;
+  gap: 1rem;
+}
+
 #blur {
   display: none;
   background: rgba(255, 255, 255, .25);
@@ -28,6 +37,21 @@ input:invalid {
   height: 100vh;
   width: 100vw;
   z-index: 1;
+}
+
+#bookSubmit {
+  margin-top: 1rem;
+  float: right;
+}
+
+#editorClose {
+  float: right;
+}
+
+#editorNav {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #editorPane {
@@ -43,19 +67,3 @@ input:invalid {
   box-shadow: 4px 4px 4px rgba(54, 47, 47, 0.4);
   z-index: 2;
 }
-
-#editorNav {
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-#editorClose {
-  float: right;
-}
-
-#bookSubmit {
-  margin-top: 1rem;
-  float: right;
-}
-
