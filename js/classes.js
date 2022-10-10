@@ -54,6 +54,11 @@ export class Library {
 
   calcSpeedInProgress() {
     // add another property to book which is current pa
+    // use variable avgRate from calcSpeedCollection and assign the range of numbers to a string
+    // ex. 1-99 = 'slow', 100-199 = 'average', 200-299 = 'quick'
+    // slow would read .25 page/min, average .5 pg/min, quick 1pg/min
+    // (readSpeed) = ('slow/average/fast' * (currentPages - TotalPages)) * 60 
+    // maybe?
   }; // TODO Calculates a reader's speed only based on in-progress books
 
   
