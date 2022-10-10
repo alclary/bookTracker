@@ -87,5 +87,9 @@ export default function formListeners(library) {
       displayPlannedForm();
     }
   });
-  // Create a new book on 'submit'
+  // TODO Create a new book on 'submit'
+  formSubmit.addEventListener("click", () => {
+
+  });
+ 
 }
